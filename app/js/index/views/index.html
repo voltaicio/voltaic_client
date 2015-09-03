@@ -1,6 +1,11 @@
-<form method="GET" action=".">
+<form novalidate>
     <div>
-        <input type="text" />
+        <input ng-model="searchQuery" type="text" />
     </div>
-    <button type="submit">Submit</button>
+    <button ng-click="onSubmitClick()" type="submit">Submit</button>
 </form>
+<ul>
+    <li ng-repeat="result in searchResults">
+        {{ result.model_type }} : {{ result.title }}
+    </li>
+</ul>

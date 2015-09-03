@@ -6,8 +6,13 @@ angular.module("voltaic", [
 
 
 .config([
+        "$httpProvider",
         "$urlRouterProvider",
-        function($urlRouterProvider) {
+        function($httpProvider, $urlRouterProvider) {
+
+    $httpProvider.defaults.headers.common["Accept"] = "application/json";
+    $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+
     $urlRouterProvider.when("", "/");
     $urlRouterProvider.otherwise("/404");
 }]);

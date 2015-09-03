@@ -12,6 +12,15 @@ angular.module("voltaic.index", [])
 }])
 
 
-.controller("IndexCtrl", ["$scope", function($scope) {
+.controller("IndexCtrl", ["$scope", "$http", function($scope, $http) {
 
+    $scope.onSubmitClick = function() {
+        $http.get("http://127.0.0.1:8000/v1/search?q=" + $scope.searchQuery)
+            .then(function(response) {
+                $scope.searchResults = response.data;
+            }, function(response) {
+                // @todo handle this
+                console.log("ERROR");
+            });
+    };
 }]);
