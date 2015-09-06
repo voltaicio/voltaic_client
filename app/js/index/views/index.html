@@ -6,6 +6,9 @@
 </form>
 <ul>
     <li ng-repeat="result in searchResults">
-        {{ result.model_type }} : {{ result.title }}
+        <a ng-if="result.model_type == 'photo'" ui-sref="photo_list">
+            {{ result.title }}
+        </a>
+        <span ng-if="result.model_type != 'photo'">{{ result.title }}</span>
     </li>
 </ul>
