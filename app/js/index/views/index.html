@@ -9,6 +9,9 @@
         <a ng-if="result.model_type == 'photo'" ui-sref="photo_list">
             {{ result.title }}
         </a>
+        <a ng-if="result.model_type == 'project'" ui-sref="project_list">
+            {{ result.title }}
+        </a>
         <span ng-if="result.model_type != 'photo'">{{ result.title }}</span>
     </li>
 </ul>

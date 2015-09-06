@@ -2,8 +2,10 @@ angular.module("voltaic", [
     "restangular",
     "ui.router",
     "voltaic.cfg",
+    "voltaic.blog",
     "voltaic.index",
-    "voltaic.photos"
+    "voltaic.photos",
+    "voltaic.projects"
 ])
 
 
