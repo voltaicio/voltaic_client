@@ -1,0 +1,6 @@
+<h1>Photo List</h1>
+<ul>
+    <li ng-repeat="photo in photos">
+        <a ui-sref="photo_detail({ id: photo.id })">{{ photo.title }}</a>
+    </li>
+</ul>
