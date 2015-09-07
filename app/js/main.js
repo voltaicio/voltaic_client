@@ -22,4 +22,14 @@ angular.module("voltaic", [
     $urlRouterProvider.otherwise("/404");
 
     RestangularProvider.setBaseUrl("http://127.0.0.1:8000/v1");
+}])
+
+
+.run(["$rootScope", "$state", function($rootScope, $state) {
+    $rootScope.$on(
+            "$stateChangeStart",
+            function(event, toState, toParams, fromState, fromParams) {
+        $rootScope.metaDescription = toState.metaDescription || "";
+        $rootScope.title = toState.title || "Voltaic";
+    });
 }]);

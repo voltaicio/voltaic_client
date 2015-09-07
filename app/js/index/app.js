@@ -5,6 +5,7 @@ angular.module("voltaic.index", [])
     $stateProvider
         .state("index", {
             controller: "IndexCtrl",
+            metaDescription: "Voltaic TechniCreative",
             templateUrl: "js/index/views/index.html",
             title: "Index",
             url: "/?q"
