@@ -1,1 +1,6 @@
 <h1>Posts</h1>
+<ul>
+    <li ng-repeat="post in posts">
+        <a ui-sref="post_detail({ id: post.id })">{{ post.title }}</a>
+    </li>
+</ul>

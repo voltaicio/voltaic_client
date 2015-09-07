@@ -7,20 +7,26 @@ angular.module("voltaic.index", [])
             controller: "IndexCtrl",
             templateUrl: "js/index/views/index.html",
             title: "Index",
-            url: "/"
+            url: "/?q"
         });
 }])
 
 
-.controller("IndexCtrl", ["$scope", "$http", function($scope, $http) {
+.controller("IndexCtrl", [
+        "$scope", "$http", "$state", "$stateParams",
+        function($scope, $http, $state, $stateParams) {
 
-    $scope.onSubmitClick = function() {
-        $http.get("http://127.0.0.1:8000/v1/search?q=" + $scope.searchQuery)
+    if ($stateParams.q !== undefined) {
+        $http.get("http://127.0.0.1:8000/v1/search/?q=" + $stateParams.q)
             .then(function(response) {
                 $scope.searchResults = response.data;
             }, function(response) {
                 // @todo handle this
                 console.log("ERROR");
             });
+    }
+
+    $scope.onSubmitClick = function() {
+        $state.go("index", { q: $scope.searchQuery }); 
     };
 }]);
