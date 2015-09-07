@@ -6,14 +6,21 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <main ui-view></main>
+        <ng-include src="'_nav.html'"></ng-include>
+        <div class="container">
+            <main ui-view></main>
+            <ng-include src="'_footer.html'"></ng-include>
+        </div>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="bower_components/lodash/lodash.min.js"></script>
         <script src="bower_components/restangular/dist/restangular.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="js/cfg.js"></script>
         <script src="js/blog/app.js"></script>
         <script src="js/index/app.js"></script>

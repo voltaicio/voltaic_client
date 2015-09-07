@@ -35,4 +35,4 @@ angular.module("voltaic.projects", [])
 
 .factory("Project", ["Restangular", function(Restangular) {
     return Restangular.service("projects");
-});
+}]);
