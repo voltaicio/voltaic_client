@@ -12,8 +12,13 @@ angular.module("voltaic", [
 .config([
         "$httpProvider",
         "$urlRouterProvider",
+        "API_URL",
         "RestangularProvider",
-        function($httpProvider, $urlRouterProvider, RestangularProvider) {
+        function(
+            $httpProvider,
+            $urlRouterProvider,
+            API_URL,
+            RestangularProvider) {
 
     $httpProvider.defaults.headers.common.Accept = "application/json";
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
@@ -21,7 +26,7 @@ angular.module("voltaic", [
     $urlRouterProvider.when("", "/");
     $urlRouterProvider.otherwise("/404");
 
-    RestangularProvider.setBaseUrl("http://127.0.0.1:8000/v1");
+    RestangularProvider.setBaseUrl(API_URL);
 }])
 
 

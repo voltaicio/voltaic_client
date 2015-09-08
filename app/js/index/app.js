@@ -14,20 +14,21 @@ angular.module("voltaic.index", [])
 
 
 .controller("IndexCtrl", [
-        "$scope", "$http", "$state", "$stateParams",
-        function($scope, $http, $state, $stateParams) {
+        "$scope", "$http", "$state", "$stateParams", "API_URL",
+        function($scope, $http, $state, $stateParams, API_URL) {
 
     if ($stateParams.q !== undefined) {
-        $http.get("http://127.0.0.1:8000/v1/search/?q=" + $stateParams.q)
+        $http.get(API_URL + "search/?q=" + $stateParams.q)
             .then(function(response) {
                 $scope.searchResults = response.data;
             }, function(response) {
                 // @todo handle this
                 console.log("ERROR");
             });
+        $scope.searchQuery = $stateParams.q;
     }
 
-    $scope.onSubmitClick = function() {
+    $scope.onSubmit = function() {
         $state.go("index", { q: $scope.searchQuery }); 
     };
 }]);
