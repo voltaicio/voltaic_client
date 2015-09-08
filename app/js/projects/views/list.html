@@ -1,6 +1,8 @@
 <h1>Projects</h1>
 <ul>
     <li ng-repeat="project in projects">
-        <a ui-sref="project_detail({ id: project.id })">{{ project.title }}</a>
+        <a ui-sref="project_detail({ slug: project.slug })">
+            {{ project.title }}
+        </a>
     </li>
 </ul>

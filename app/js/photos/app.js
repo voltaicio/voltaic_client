@@ -7,7 +7,7 @@ angular.module("voltaic.photos", [])
             controller: "PhotoDetailCtrl",
             templateUrl: "js/photos/views/detail.html",
             title: "Photo",
-            url: "/photos/:id"
+            url: "/photos/:slug"
         })
         .state("photo_list", {
             controller: "PhotoListCtrl",
@@ -20,7 +20,7 @@ angular.module("voltaic.photos", [])
 
 .controller("PhotoDetailCtrl", [
         "$scope", "$stateParams", "Photo", function($scope, $stateParams, Photo) {
-    Photo.one($stateParams.id).get().then(function(photo) {
+    Photo.one($stateParams.slug).get().then(function(photo) {
         $scope.photo = photo;
     });
 }])

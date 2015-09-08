@@ -7,7 +7,7 @@ angular.module("voltaic.projects", [])
             controller: "ProjectDetailCtrl",
             templateUrl: "js/projects/views/detail.html",
             title: "Project",
-            url: "/projects/:id"
+            url: "/projects/:slug"
         })
         .state("project_list", {
             controller: "ProjectListCtrl",
@@ -20,7 +20,7 @@ angular.module("voltaic.projects", [])
 
 .controller("ProjectDetailCtrl", [
         "$scope", "$stateParams", "Project", function($scope, $stateParams, Project) {
-    Project.one($stateParams.id).get().then(function(project) {
+    Project.one($stateParams.slug).get().then(function(project) {
         $scope.project = project;
     });
 }])

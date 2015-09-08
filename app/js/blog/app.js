@@ -7,7 +7,7 @@ angular.module("voltaic.blog", [])
             controller: "PostDetailCtrl",
             templateUrl: "js/blog/views/post_detail.html",
             title: "Post",
-            url: "/posts/:id"
+            url: "/posts/:slug"
         })
         .state("post_list", {
             controller: "PostListCtrl",
@@ -20,7 +20,7 @@ angular.module("voltaic.blog", [])
 
 .controller("PostDetailCtrl", [
         "$scope", "$stateParams", "Post", function($scope, $stateParams, Post) {
-    Post.one($stateParams.id).get().then(function(post) {
+    Post.one($stateParams.slug).get().then(function(post) {
         $scope.post = post;
     });
 }])
