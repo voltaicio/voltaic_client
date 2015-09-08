@@ -1,6 +1,7 @@
 angular.module("voltaic", [
     "restangular",
     "ui.router",
+    "voltaic.alerts",
     "voltaic.cfg",
     "voltaic.blog",
     "voltaic.index",

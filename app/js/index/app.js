@@ -14,16 +14,19 @@ angular.module("voltaic.index", [])
 
 
 .controller("IndexCtrl", [
-        "$scope", "$http", "$state", "$stateParams", "API_URL",
-        function($scope, $http, $state, $stateParams, API_URL) {
+        "$scope", "$http", "$state", "$stateParams", "Alerts", "API_URL",
+        function($scope, $http, $state, $stateParams, Alerts, API_URL) {
 
     if ($stateParams.q !== undefined) {
         $http.get(API_URL + "search/?q=" + $stateParams.q)
             .then(function(response) {
                 $scope.searchResults = response.data;
             }, function(response) {
-                // @todo handle this
-                console.log("ERROR");
+                Alerts.add({
+                    body: "The server returned a " + response.status + " error."
+                    callout: "WHOOPS!",
+                    type: "danger"
+                });
             });
         $scope.searchQuery = $stateParams.q;
     }

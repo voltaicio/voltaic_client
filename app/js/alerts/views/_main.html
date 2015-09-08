@@ -1,0 +1,6 @@
+<div
+        ng-repeat="alert in alertsCtrl.alerts"
+        class="alert alert-{{ alert.type }}">
+    <strong ng-show="alert.callout">{{ alert.callout }}</strong>
+    {{ alert.body }}
+</div>

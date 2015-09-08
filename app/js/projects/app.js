@@ -19,7 +19,8 @@ angular.module("voltaic.projects", [])
 
 
 .controller("ProjectDetailCtrl", [
-        "$scope", "$stateParams", "Project", function($scope, $stateParams, Project) {
+        "$scope", "$stateParams", "Project",
+        function($scope, $stateParams, Project) {
     Project.one($stateParams.slug).get().then(function(project) {
         $scope.project = project;
     });
