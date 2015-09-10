@@ -12,17 +12,19 @@ gulp.task("build", function() {
 
     gulp.src([
             "app/bower_components/angular/angular.min.js",
-            "app/bower_components/angular-ui-router/release/angular-ui-router.min.js"
-//            "app/bower_components/lodash/lodash.min.js",
-//            "app/bower_components/restangular/dist/restangular.min.js"
+            "app/bower_components/angular-ui-router/release/angular-ui-router.min.js",
+            "app/bower_components/lodash/lodash.min.js",
+            "app/bower_components/restangular/dist/restangular.min.js",
+            "app/bower_components/jquery/dist/jquery.min.js",
+            "app/js/lib/bootstrap.min.js"
         ])
         .pipe(concat("lib.js"))
         .pipe(gulp.dest("./app/js/"));
 
     gulp.src([
-            "app/js/*/*.js",
-            "app/js/cfg.js",
-            "app/js/main.js"
+        "app/js/cfg.js",
+        "app/js/main.js",
+        "app/js/*/app.js",
         ])
         .pipe(concat("voltaic.js"))
         .pipe(gulp.dest("./app/js/"));
@@ -31,6 +33,7 @@ gulp.task("build", function() {
 
 gulp.task("lint", function() {
     gulp.src([
+            "!app/js/lib/*.js",
             "app/js/*/*.js",
             "app/js/main.js"
         ])
