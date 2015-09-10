@@ -1,8 +1,17 @@
-<h1>Projects</h1>
-<ul>
-    <li ng-repeat="project in projects">
+<div class="project" ng-repeat="project in projects">
+    <h1>
         <a ui-sref="project_detail({ slug: project.slug })">
             {{ project.title }}
         </a>
-    </li>
-</ul>
+    </h1>
+    <p class="text-muted">
+        <small>Created: {{ project.created | date : "medium" }}</small>
+    </p>
+    <div id="description">{{ project.description | limitTo : 300 }}...</div>
+    <ul class="clearfix" id="tags">
+        <li class="pull-left text-muted" ng-repeat="tag in project.tags">
+            <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
+        </li>
+    </ul>
+    <hr ng-if="!$last" />
+</div>
