@@ -23,7 +23,7 @@ angular.module("voltaic.index", [])
                 $scope.searchResults = response.data;
             }, function(response) {
                 Alerts.add({
-                    body: "The server returned a " + response.status + " error."
+                    body: "The server returned a " + response.status + " error.",
                     callout: "WHOOPS!",
                     type: "danger"
                 });

@@ -1,0 +1,10 @@
+hr { border: 1px dashed #e5e5e5; }
+
+.post #body {
+    margin-bottom: 20px; 
+}
+.post #tags {
+    list-style-type: none;
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0;
+}

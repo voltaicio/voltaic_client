@@ -1,8 +1,12 @@
-<h1>Post</h1>
-<div>Body: {{ post.body }}</div>
-<div>Created: {{ post.created }}</div>
-<div>ID: {{ post.id }}</div>
-<div>Modified: {{ post.modified }}</div>
-<div>Slug: {{ post.slug }}</div>
-<div>Tags: {{ post.tags }}</div>
-<div>Title: {{ post.title }}</div>
+<div class="post">
+    <h1>{{ post.title }}</h1>
+    <p class="text-muted">
+        <small>Created: {{ post.created | date : "medium" }}</small>
+    </p>
+    <div id="body">{{ post.body }}</div>
+    <ul class="clearfix" id="tags">
+        <li class="pull-left text-muted" ng-repeat="tag in post.tags">
+            <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
+        </li>
+    </ul>
+</div>
