@@ -28,10 +28,10 @@ angular.module("voltaic.index", [])
                     type: "danger"
                 });
             });
-        $scope.searchQuery = $stateParams.q;
+        $scope.query = $stateParams.q;
     }
 
     $scope.onSubmit = function() {
-        $state.go("index", { q: $scope.searchQuery }); 
+        $state.go("index", { q: $scope.query }); 
     };
 }]);
