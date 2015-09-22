@@ -13,25 +13,33 @@
     </div>
     <div class="col-md-12">
         <div id="search-results">
-            <ul ng-show="searchResults.length">
-                <li ng-repeat="result in searchResults">
-                    <a
-                            ng-if="result.model_type == 'photo'"
-                            ui-sref="photo_detail({ id: result.id })">
-                        {{ result.title }}
-                    </a>
-                    <a
-                            ng-if="result.model_type == 'post'"
-                            ui-sref="post_detail({ id: result.id })">
-                        {{ result.title }}
-                    </a>
-                    <a
-                            ng-if="result.model_type == 'project'"
-                            ui-sref="project_detail({ id: result.id })">
-                        {{ result.title }}
-                    </a>
-                </li>
-            </ul>
+            <div ng-repeat="result in searchResults">
+                <div ng-if="result.model_type == 'photo'">
+                    <h1>
+                        <a ui-sref="photo_detail({ id: result.id })">
+                            {{ result.title }}
+                        </a>
+                    </h1>
+                    <div class="description">{{ result.description }}</div>
+                </div>
+                <div ng-if="result.model_type == 'post'">
+                    <h1>
+                        <a ui-sref="post_detail({ id: result.id })">
+                            {{ result.title }}
+                        </a>
+                    </h1>
+                    <div class="body">{{ result.body }}</div>
+                </div>
+                <div ng-if="result.model_type == 'project'">
+                    <h1>
+                        <a ui-sref="project_detail({ id: result.id })">
+                            {{ result.title }}
+                        </a>
+                    </h1>
+                    <div class="description">{{ result.description }}</div>
+                </div>
+                <hr ng-if="!$last" />
+            </div>
             <p ng-show="searchResults && !searchResults.length && searchForm.query.$dirty">
                 NO RESULTS!
             </p>
