@@ -1,0 +1,18 @@
+<div class="row">
+    <hr />
+    <div class="col-md-offset-4 col-md-4">
+        <form
+                name="searchForm"
+                ng-submit="onSearch(query)"
+                novalidate>
+            <div class="input-group">
+                <div class="input-group-addon">Show me</div>
+                <input
+                    class="form-control"
+                    name="query"
+                    ng-model="query"
+                    type="text" />
+            </div>
+        </form>
+    </div>
+</div>

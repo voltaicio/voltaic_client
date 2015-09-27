@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Recent Activity</h1>
+    </div>
+    <div class="col-md-4">
+        <h3>{{ project.title }}</h3>
+        <div>{{ project.description | limitTo: 150 }}...</div>
+    </div>
+    <div class="col-md-4">
+        <h3>{{ post.title }}</h3>
+        <div>{{ post.body | limitTo: 150 }}...</div>
+    </div>
+    <div class="col-md-4">
+        <h3>{{ photo.title }}</h3>
+        <div>{{ photo.description | limitTo: 150 }}...</div>
+    </div>
+</div>

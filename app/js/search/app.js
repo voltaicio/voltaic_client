@@ -8,7 +8,7 @@ angular.module("voltaic.search", [])
             metaDescription: "Voltaic TechniCreative",
             templateUrl: "js/search/views/search.html",
             title: "Search",
-            url: "/?q"
+            url: "/search?q"
         });
 }])
 

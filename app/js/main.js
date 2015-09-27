@@ -4,6 +4,7 @@ angular.module("voltaic", [
     "voltaic.alerts",
     "voltaic.cfg",
     "voltaic.blog",
+    "voltaic.index",
     "voltaic.search",
     "voltaic.photos",
     "voltaic.projects"
@@ -28,6 +29,16 @@ angular.module("voltaic", [
     $urlRouterProvider.otherwise("/404");
 
     RestangularProvider.setBaseUrl(API_URL);
+}])
+
+
+.controller("RootCtrl", ["$scope", "$state", function($scope, $state) {
+
+    // on search form submit redirect to results page
+    $scope.onSearch = function(query) {
+        $scope.query = null;
+        $state.go("search", { q: query }); 
+    };
 }])
 
 
