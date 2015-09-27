@@ -1,19 +1,19 @@
-angular.module("voltaic.index", [])
+angular.module("voltaic.search", [])
 
 
 .config(["$stateProvider", function($stateProvider) {
     $stateProvider
-        .state("index", {
-            controller: "IndexCtrl",
+        .state("search", {
+            controller: "SearchCtrl",
             metaDescription: "Voltaic TechniCreative",
-            templateUrl: "js/index/views/index.html",
-            title: "Index",
+            templateUrl: "js/search/views/search.html",
+            title: "Search",
             url: "/?q"
         });
 }])
 
 
-.controller("IndexCtrl", [
+.controller("SearchCtrl", [
         "$scope", "$http", "$state", "$stateParams", "Alerts", "API_URL",
         function($scope, $http, $state, $stateParams, Alerts, API_URL) {
 
@@ -32,6 +32,6 @@ angular.module("voltaic.index", [])
     }
 
     $scope.onSubmit = function() {
-        $state.go("index", { q: $scope.query }); 
+        $state.go("search", { q: $scope.query }); 
     };
 }]);

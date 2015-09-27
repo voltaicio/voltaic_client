@@ -4,7 +4,7 @@ angular.module("voltaic", [
     "voltaic.alerts",
     "voltaic.cfg",
     "voltaic.blog",
-    "voltaic.index",
+    "voltaic.search",
     "voltaic.photos",
     "voltaic.projects"
 ])
