@@ -29,6 +29,21 @@ angular.module("voltaic", [
     $urlRouterProvider.otherwise("/404");
 
     RestangularProvider.setBaseUrl(API_URL);
+    RestangularProvider.addResponseInterceptor(function(
+            data, operation, what, url, response, deferred) {
+        var payload = {};
+
+        if (operation === "getList") {
+            payload = data.results;
+            payload.count = data.count;
+            payload.next = data.next;
+            payload.previous = data.previous;
+        } else {
+            payload = data;
+        }
+
+        return payload;
+    });
 }])
 
 
