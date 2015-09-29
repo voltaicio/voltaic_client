@@ -13,17 +13,21 @@ angular.module("voltaic", [
 
 .config([
         "$httpProvider",
+        "$locationProvider",
         "$urlRouterProvider",
         "API_URL",
         "RestangularProvider",
         function(
             $httpProvider,
+            $locationProvider,
             $urlRouterProvider,
             API_URL,
             RestangularProvider) {
 
     $httpProvider.defaults.headers.common.Accept = "application/json";
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+
+    $locationProvider.html5Mode(true);
 
     $urlRouterProvider.when("", "/");
     $urlRouterProvider.otherwise("/404");
