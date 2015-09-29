@@ -3,7 +3,7 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^voltaic.io$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond ^(.*)$ /app/$1
+RewriteRule ^(.*)$ /app/$1
 
 RewriteCond %{HTTP_HOST} ^voltaic.io$
 RewriteRule ^$ app/index.html [L]
