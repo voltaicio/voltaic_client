@@ -15,15 +15,15 @@ angular.module("voltaic.index", [])
         "$scope", "Photo", "Post", "Project",
         function($scope, Photo, Post, Project) {
 
-    Photo.getList().then(function(photos) {
+    Photo.getList({ limit: 1, ordering: "-created" }).then(function(photos) {
         $scope.photo = photos[0];
     });
 
-    Post.getList().then(function(posts) {
+    Post.getList({ limit: 1, ordering: "-created" }).then(function(posts) {
         $scope.post = posts[0];
     });
 
-    Project.getList().then(function(projects) {
+    Project.getList({ limit: 1, ordering: "-created" }).then(function(projects) {
         $scope.project = projects[0];
     });
 
