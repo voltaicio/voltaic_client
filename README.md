@@ -19,7 +19,7 @@ Create 'cfg' file in project root:
 $ echo '{"API_URL": "<api_url_here>"}' > cfg
 ```
 
-Install NPM and Bower packages:
+Install dependencies:
 ```
 $ npm install
 ```

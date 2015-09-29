@@ -1,9 +1,10 @@
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^voltaic.io$
+RewriteCond %{HTTP_HOST} ^voltaic.io$ [NC]
+RewriteCond %{REQUEST_URI} !^/app/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /app/$1
 
-RewriteCond %{HTTP_HOST} ^voltaic.io$
-RewriteRule ^$ app/index.html [L]
+RewriteCond %{HTTP_HOST} ^voltaic.io$ [NC]
+RewriteRule ^(/)?$ app/index.html [L]
