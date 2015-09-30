@@ -1,4 +1,5 @@
 angular.module("voltaic", [
+    "ngSanitize",
     "restangular",
     "ui.router",
     "voltaic.alerts",

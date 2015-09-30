@@ -12,6 +12,7 @@ gulp.task("build", function() {
 
     gulp.src([
             "app/bower_components/angular/angular.min.js",
+            "app/bower_components/angular-sanitize/angular-sanitize.min.js",
             "app/bower_components/angular-ui-router/release/angular-ui-router.min.js",
             "app/bower_components/lodash/lodash.min.js",
             "app/bower_components/restangular/dist/restangular.min.js",

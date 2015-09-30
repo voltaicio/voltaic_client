@@ -14,8 +14,9 @@
   ],
   "dependencies": {
     "angular": "~1.4.5",
+    "angular-sanitize": "~1.4.7",
     "angular-ui-router": "~0.2.15",
-    "restangular": "~1.5.1",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "restangular": "~1.5.1"
   }
 }
