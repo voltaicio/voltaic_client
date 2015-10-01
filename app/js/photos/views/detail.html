@@ -6,7 +6,7 @@
     <div id="image">
         <img src="{{ photo.image }}" alt="" />
     </div>
-    <div id="description">{{ photo.description }}</div>
+    <div id="description" ng-bind-html="photo.description"></div>
     <ul class="clearfix" id="tags">
         <li class="pull-left text-muted" ng-repeat="tag in photo.tags">
             <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>

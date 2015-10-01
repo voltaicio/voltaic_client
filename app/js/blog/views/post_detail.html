@@ -3,7 +3,7 @@
     <p class="text-muted">
         <small>Created: {{ post.created | date : "medium" }}</small>
     </p>
-    <div id="body">{{ post.body }}</div>
+    <div id="body" ng-bind-html="post.body"></div>
     <ul class="clearfix" id="tags">
         <li class="pull-left text-muted" ng-repeat="tag in post.tags">
             <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
