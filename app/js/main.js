@@ -52,11 +52,16 @@ angular.module("voltaic", [
 }])
 
 
-.controller("RootCtrl", ["$scope", "$state", function($scope, $state) {
+.controller("RootCtrl", [
+        "$scope", "$state", "$window", function($scope, $state, $window) {
+
+    $scope.data = { query: "" };
 
     // on search form submit redirect to results page
-    $scope.onSearch = function(query) {
-        $scope.query = null;
+    $scope.onSearch = function() {
+        var query = $scope.data.query;
+        $scope.data.query = "";
+        $window.document.getElementById("search-query").blur();
         $state.go("search", { q: query }); 
     };
 }])

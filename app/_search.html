@@ -3,14 +3,15 @@
     <div class="col-md-offset-4 col-md-4">
         <form
                 name="searchForm"
-                ng-submit="onSearch(query)"
+                ng-submit="onSearch()"
                 novalidate>
             <div class="input-group">
                 <div class="input-group-addon">Show me</div>
                 <input
                     class="form-control"
+                    id="search-query"
                     name="query"
-                    ng-model="query"
+                    ng-model="data.query"
                     type="text" />
             </div>
         </form>

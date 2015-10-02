@@ -17,8 +17,10 @@ angular.module("voltaic.search", [])
         "$scope", "$http", "$state", "$stateParams", "Alerts", "API_URL",
         function($scope, $http, $state, $stateParams, Alerts, API_URL) {
 
-    if ($stateParams.q !== undefined) {
-        $http.get(API_URL + "search/?q=" + $stateParams.q)
+    var searchQuery = $stateParams.q;
+
+    if (searchQuery !== undefined) {
+        $http.get(API_URL + "search/?q=" + searchQuery)
             .then(function(response) {
                 $scope.searchResults = response.data.results;
             }, function(response) {
@@ -28,7 +30,7 @@ angular.module("voltaic.search", [])
                     type: "danger"
                 });
             });
-        $scope.query = $stateParams.q;
+        $scope.searchQuery = searchQuery;
     }
 
     $scope.onSubmit = function() {
