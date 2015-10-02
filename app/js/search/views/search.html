@@ -8,7 +8,9 @@
                             {{ result.title }}
                         </a>
                     </h1>
-                    <div class="description">{{ result.description }}</div>
+                    <div class="description" ng-bind-html="result.description">
+                        {{ result.description }}
+                    </div>
                 </div>
                 <div ng-if="result.model_type == 'post'">
                     <h1>
@@ -16,7 +18,9 @@
                             {{ result.title }}
                         </a>
                     </h1>
-                    <div class="body">{{ result.body }}</div>
+                    <div class="body" ng-bind-html="result.body">
+                        {{ result.body }}
+                    </div>
                 </div>
                 <div ng-if="result.model_type == 'project'">
                     <h1>
@@ -24,7 +28,9 @@
                             {{ result.title }}
                         </a>
                     </h1>
-                    <div class="description">{{ result.description }}</div>
+                    <div class="description" ng-bind-html="result.description">
+                        {{ result.description }}
+                    </div>
                 </div>
                 <hr ng-if="!$last" />
             </div>

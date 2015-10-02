@@ -20,7 +20,7 @@ angular.module("voltaic.search", [])
     if ($stateParams.q !== undefined) {
         $http.get(API_URL + "search/?q=" + $stateParams.q)
             .then(function(response) {
-                $scope.searchResults = response.data;
+                $scope.searchResults = response.data.results;
             }, function(response) {
                 Alerts.add({
                     body: "The server returned a " + response.status + " error.",
