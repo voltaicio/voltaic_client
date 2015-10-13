@@ -63,3 +63,9 @@ h1, h2, h3 { font-family: "aleoregular"; }
 .navbar-default .navbar-nav > li > a:focus { color: #b74030; }
 
 .text-muted { color: #aaa; }
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0; 
+    }
+}
