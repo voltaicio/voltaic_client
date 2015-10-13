@@ -1,15 +1,17 @@
-<div class="photo">
-    <h1>{{ photo.title }}</h1>
-    <p class="text-muted">
-        <small>Created: {{ photo.created | date : "medium" }}</small>
-    </p>
-    <div id="image">
-        <img class="img-responsive" src="{{ photo.image }}" />
+<div class="row">
+    <div class="col-md-12 photo">
+        <h1>{{ photo.title }}</h1>
+        <p class="text-muted">
+            <small>Created: {{ photo.created | date : "medium" }}</small>
+        </p>
+        <div id="image">
+            <img class="img-responsive" src="{{ photo.image }}" />
+        </div>
+        <div id="description" ng-bind-html="photo.description"></div>
+        <ul class="clearfix" id="tags">
+            <li class="pull-left text-muted" ng-repeat="tag in photo.tags">
+                <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
+            </li>
+        </ul>
     </div>
-    <div id="description" ng-bind-html="photo.description"></div>
-    <ul class="clearfix" id="tags">
-        <li class="pull-left text-muted" ng-repeat="tag in photo.tags">
-            <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
-        </li>
-    </ul>
 </div>

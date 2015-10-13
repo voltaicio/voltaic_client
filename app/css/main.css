@@ -59,8 +59,16 @@ h1, h2, h3 { font-family: "aleoregular"; }
     color: #aaa;
     text-transform: uppercase;
 }
-.navbar-default .navbar-nav > li > a:hover { color: #eee; }
+.navbar-default .navbar-nav > li > a:hover { color: #fff; }
 .navbar-default .navbar-nav > li > a:focus { color: #b74030; }
+.navbar-default .navbar-toggle { border-color: #050d11; }
+.navbar-default .navbar-toggle:hover { background-color: #050d11; }
+.navbar-default .navbar-toggle:focus { background-color: #050d11; }
+.navbar-default .navbar-collapse { border-color: #050d11; }
+.navbar-collapse {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 .text-muted { color: #aaa; }
 

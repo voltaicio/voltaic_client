@@ -1,17 +1,19 @@
-<div class="post" ng-repeat="post in posts">
-    <h1>
-        <a ui-sref="post_detail({ slug: post.slug })">
-            {{ post.title }}
-        </a>
-    </h1>
-    <p class="text-muted">
-        <small>Created: {{ post.created | date : "medium" }}</small>
-    </p>
-    <div id="body" ng-bind-html="post.body"></div>
-    <ul class="clearfix" id="tags">
-        <li class="pull-left text-muted" ng-repeat="tag in post.tags">
-            <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
-        </li>
-    </ul>
-    <hr ng-if="!$last" />
+<div class="row">
+    <div class="col-md-12 post" ng-repeat="post in posts">
+        <h1>
+            <a ui-sref="post_detail({ slug: post.slug })">
+                {{ post.title }}
+            </a>
+        </h1>
+        <p class="text-muted">
+            <small>Created: {{ post.created | date : "medium" }}</small>
+        </p>
+        <div id="body" ng-bind-html="post.body"></div>
+        <ul class="clearfix" id="tags">
+            <li class="pull-left text-muted" ng-repeat="tag in post.tags">
+                <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
+            </li>
+        </ul>
+        <hr ng-if="!$last" />
+    </div>
 </div>
