@@ -4,7 +4,7 @@
         <small>Created: {{ photo.created | date : "medium" }}</small>
     </p>
     <div id="image">
-        <img src="{{ photo.image }}" alt="" />
+        <img class="img-responsive" src="{{ photo.image }}" />
     </div>
     <div id="description" ng-bind-html="photo.description"></div>
     <ul class="clearfix" id="tags">
