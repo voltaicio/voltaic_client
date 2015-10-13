@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <div id="search-results">
-            <p>You searched for: {{ searchQuery }}</p>
+            <p>You searched for: <mark>{{ searchQuery }}</mark></p>
             <div ng-repeat="result in searchResults">
                 <div ng-if="result.model_type == 'photo'">
                     <h1>
