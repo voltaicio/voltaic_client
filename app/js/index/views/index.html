@@ -1,29 +1,21 @@
 <div class="row">
     <div class="col-md-12">
-        <h1>Recent Activity</h1>
-    </div>
-    <div class="col-md-4">
-        <h3>
-            <a ui-sref="project_detail({ slug: project.slug })">
-                {{ project.title }}
-            </a>
-        </h3>
-        <div ng-bind-html="project.description"></div>
-    </div>
-    <div class="col-md-4">
-        <h3>
+        <h1>
             <a ui-sref="post_detail({ slug: post.slug })">
                 {{ post.title }}
             </a>
-        </h3>
-        <div ng-bind-html="post.body"></div>
+        </h1>
+        <h3>{{ post.subtitle }}</h3>
+        <hr />
     </div>
-    <div class="col-md-4">
-        <h3>
-            <a ui-sref="photo_detail({ slug: photo.slug })">
-                {{ photo.title }}
-            </a>
-        </h3>
-        <img class="img-responsive" src="{{ photo.image }}" />
+    <div class="col-md-12">
+        <h3>Recent Photos</h3>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="photo in photos">
+                <a ui-sref="photo_detail({ slug: photo.slug })">
+                    <img class="img-responsive" src="{{ photo.image }}" />
+                </a>
+            </div>
+        </div>
     </div>
 </div>
