@@ -1,7 +1,7 @@
-app/bower_components
-app/js/cfg.js
-app/js/lib.js
-app/js/voltaic.js
+bower_components
+js/cfg.js
+js/lib.js
+js/voltaic.js
 cfg
 node_modules
 npm-debug.log
