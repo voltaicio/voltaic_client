@@ -8,35 +8,35 @@ var concat = require("gulp-concat"),
 gulp.task("build", function() {
     gulp.src("cfg")
         .pipe(gulpNgConfig("voltaic.cfg"))
-        .pipe(gulp.dest("app/js"));
+        .pipe(gulp.dest("js"));
 
     gulp.src([
-            "app/bower_components/angular/angular.min.js",
-            "app/bower_components/angular-sanitize/angular-sanitize.min.js",
-            "app/bower_components/angular-ui-router/release/angular-ui-router.min.js",
-            "app/bower_components/lodash/lodash.min.js",
-            "app/bower_components/restangular/dist/restangular.min.js",
-            "app/bower_components/jquery/dist/jquery.min.js",
-            "app/js/lib/bootstrap.min.js"
+            "bower_components/angular/angular.min.js",
+            "bower_components/angular-sanitize/angular-sanitize.min.js",
+            "bower_components/angular-ui-router/release/angular-ui-router.min.js",
+            "bower_components/lodash/lodash.min.js",
+            "bower_components/restangular/dist/restangular.min.js",
+            "bower_components/jquery/dist/jquery.min.js",
+            "js/lib/bootstrap.min.js"
         ])
         .pipe(concat("lib.js"))
-        .pipe(gulp.dest("./app/js/"));
+        .pipe(gulp.dest("./js/"));
 
     gulp.src([
-        "app/js/cfg.js",
-        "app/js/main.js",
-        "app/js/*/app.js",
+        "js/cfg.js",
+        "js/main.js",
+        "js/*/app.js",
         ])
         .pipe(concat("voltaic.js"))
-        .pipe(gulp.dest("./app/js/"));
+        .pipe(gulp.dest("./js/"));
 });
 
 
 gulp.task("lint", function() {
     gulp.src([
-            "!app/js/lib/*.js",
-            "app/js/*/*.js",
-            "app/js/main.js"
+            "!js/lib/*.js",
+            "js/*/*.js",
+            "js/main.js"
         ])
         .pipe(jshint())
         .pipe(jshint.reporter("default"));
@@ -44,7 +44,7 @@ gulp.task("lint", function() {
 
 
 gulp.task("serve", function() {
-    gulp.src("app")
+    gulp.src(".")
         .pipe(server({ port: 8080 }));
 });
 
