@@ -3,7 +3,7 @@
         <h1>{{ post.title }}</h1>
         <h3>{{ post.subtitle }}</h3>
         <div class="body" ng-bind-html="post.body"></div>
-        <p class="text-muted">
+        <p class="created text-muted">
             <small>{{ post.created | date : "medium" }}</small>
         </p>
         <ul class="clearfix tags">
