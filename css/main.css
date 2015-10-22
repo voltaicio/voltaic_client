@@ -72,7 +72,8 @@ h1, h2, h3 { font-family: "aleoregular"; }
 
 .text-muted { color: #aaa; }
 
-#index h1, #index h3 { margin: 10px 0 20px 0; }
+#index h1 { margin: 10px 0 10px 0; }
+#index h3 { margin: 0 0 20px 0; }
 
 @media (min-width: 768px) {
     .navbar {
