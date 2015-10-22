@@ -32,6 +32,13 @@ a:hover {
 
 h1, h2, h3 { font-family: "aleoregular"; }
 
+#logo {
+    background: url(../img/icon_30_30@2x.png) 0 0 no-repeat;
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+}
+
 .photo .description,
 .post .body,
 .project .description {
@@ -82,5 +89,8 @@ footer a { color: #aaa; }
 @media (min-width: 768px) {
     .navbar {
         border-radius: 0; 
+    }
+    #logo {
+        background: url(../img/icon_30_30.png) 0 0 no-repeat;
     }
 }
