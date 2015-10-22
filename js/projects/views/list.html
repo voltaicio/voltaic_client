@@ -5,10 +5,10 @@
                 {{ project.title }}
             </a>
         </h1>
+        <div class="description" ng-bind-html="project.description"></div>
         <p class="text-muted">
             <small>{{ project.created | date : "medium" }}</small>
         </p>
-        <div class="description" ng-bind-html="project.description"></div>
         <ul class="clearfix tags">
             <li class="pull-left text-muted" ng-repeat="tag in project.tags">
                 <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>

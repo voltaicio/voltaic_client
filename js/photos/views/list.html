@@ -5,10 +5,10 @@
                 {{ photo.title }}
             </a>
         </h1>
+        <img class="img-responsive" id="image" ng-src="{{ photo.image }}" />
         <p class="text-muted">
             <small>{{ photo.created | date : "medium" }}</small>
         </p>
-        <img class="img-responsive" id="image" ng-src="{{ photo.image }}" />
         <ul class="clearfix tags">
             <li class="pull-left text-muted" ng-repeat="tag in photo.tags">
                 <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
