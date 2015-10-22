@@ -11,7 +11,7 @@
         </p>
         <ul class="clearfix tags">
             <li class="pull-left text-muted" ng-repeat="tag in project.tags">
-                <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
+                <small>{{ tag.title }}{{ $last ? "" : ",&nbsp;" }}</small>
             </li>
         </ul>
         <hr ng-if="!$last" />
