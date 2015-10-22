@@ -6,10 +6,10 @@
             </a>
         </h1>
         <p class="text-muted">
-            <small>Created: {{ project.created | date : "medium" }}</small>
+            <small>{{ project.created | date : "medium" }}</small>
         </p>
-        <div id="description" ng-bind-html="project.description"></div>
-        <ul class="clearfix" id="tags">
+        <div class="description" ng-bind-html="project.description"></div>
+        <ul class="clearfix tags">
             <li class="pull-left text-muted" ng-repeat="tag in project.tags">
                 <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
             </li>

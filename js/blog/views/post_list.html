@@ -5,11 +5,12 @@
                 {{ post.title }}
             </a>
         </h1>
-        <p class="text-muted">
-            <small>Created: {{ post.created | date : "medium" }}</small>
+        <h3>{{ post.subtitle }}</h3>
+        <div class="body" ng-bind-html="post.body"></div>
+        <p class="created text-muted">
+            <small>{{ post.created | date : "medium" }}</small>
         </p>
-        <div id="body" ng-bind-html="post.body"></div>
-        <ul class="clearfix" id="tags">
+        <ul class="clearfix tags">
             <li class="pull-left text-muted" ng-repeat="tag in post.tags">
                 <small>{{ tag.title }}{{ $last ? "" : ", " }}</small>
             </li>

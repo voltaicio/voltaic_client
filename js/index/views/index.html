@@ -1,12 +1,15 @@
 <div class="row" id="index">
-    <div class="col-md-12">
+    <div class="col-md-12 post">
         <h1>
             <a ui-sref="post_detail({ slug: post.slug })">
                 {{ post.title }}
             </a>
         </h1>
         <h3>{{ post.subtitle }}</h3>
-        <div ng-bind-html="post.body"></div>
+        <div class="body" ng-bind-html="post.body"></div>
+        <p class="text-muted">
+            <small>{{ post.created | date : "medium" }}</small>
+        </p>
         <hr />
     </div>
     <div class="col-md-12">
